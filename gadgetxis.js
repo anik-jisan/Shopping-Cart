@@ -95,9 +95,11 @@ function updateCartTotal() {
         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
 
-        var price = priceElement.innerText.replace('TK', '')
+        var price = priceElement.innerText.replace('TK. ', '')
+        
         var quantity = quantityElement.value
         total = (total + (price * quantity))
     }
     document.getElementsByClassName('cart-total-price')[0].innerText = 'TK. ' + total
+    console.log(total);
 }
